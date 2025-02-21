@@ -9,34 +9,39 @@
     <meta name="author" content="">
     <title>C5K</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 
 <body>
     <nav class="bg-gray-900 text-white p-3">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Left: Show C5K.com Always, Hide Other Links on Mobile -->
             <div class="flex space-x-4">
                 <a href="#" class="flex items-center hover:text-gray-400">
                     <span class="mr-1">🏠</span>C5K.com
                 </a>
-                <a href="#" class="hover:text-gray-400">C5K.co</a>
-                <a href="#" class="hover:text-gray-400">C5K.ec</a>
-                <a href="#" class="hover:text-gray-400">C5K.nl</a>
-                <a href="#" class="hover:text-gray-400">More Sites</a>
-
+                <a href="#" class="hover:text-gray-400 hidden md:inline">C5K.co</a>
+                <a href="#" class="hover:text-gray-400 hidden md:inline">C5K.ec</a>
+                <a href="#" class="hover:text-gray-400 hidden md:inline">C5K.nl</a>
+                <a href="#" class="hover:text-gray-400 hidden md:inline">More Sites</a>
             </div>
 
+            <!-- Right: Show JOIN C5K Always, Hide Other Links on Mobile -->
             <div class="flex space-x-4">
-                <a href="#" class="hover:text-gray-400">Membership</a>
-                <a href="#" class="hover:text-gray-400">Sign In</a>
+                <a href="#" class="hover:text-gray-400 hidden md:inline">Membership</a>
+                <a href="#" class="hover:text-gray-400 hidden md:inline">Sign In</a>
                 <a href="#" class="hover:text-gray-400 font-bold">JOIN C5K</a>
             </div>
         </div>
     </nav>
-    <nav class="bg-[#007C92] p-4 shadow-lg">
-        <div class="max-w-7xl m-auto flex justify-center items-center">
-            {{-- <div class="text-white text-2xl font-extrabold">Brand</div> --}}
 
-            <div class="hidden md:flex space-x-6 text-white font-medium">
+    <nav class="bg-[#007C92] p-4 shadow-lg">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Left: Logo -->
+            <div class="text-white text-2xl font-extrabold">Brand</div>
+
+            <!-- Center: Navigation Links (Hidden on Small Screens) -->
+            <div class="hidden md:flex space-x-6 text-white font-medium absolute left-1/2 transform -translate-x-1/2">
                 <a href="#" class="hover:text-gray-200 transition">Home</a>
                 <a href="#" class="hover:text-gray-200 transition">About</a>
                 <a href="#" class="hover:text-gray-200 transition">Academic Journals</a>
@@ -46,11 +51,21 @@
                 <a href="#" class="hover:text-gray-200 transition">Announcements</a>
             </div>
 
-            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
-                ☰
-            </button>
+            <!-- Right: Social Icons & Mobile Menu Toggle -->
+            <div class="flex items-center space-x-4">
+                <!-- Social Icons -->
+                <a href="#" class="text-white text-xl hover:text-gray-200"><i class="fab fa-facebook"></i></a>
+                {{-- <a href="#" class="text-white text-xl hover:text-gray-200"><i class="fab fa-x"></i></a> --}}
+                <a href="#" class="text-white text-xl hover:text-gray-200"><i class="fab fa-linkedin"></i></a>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-toggle" class="md:hidden text-white focus:outline-none text-2xl">
+                    ☰
+                </button>
+            </div>
         </div>
 
+        <!-- Mobile Menu -->
         <div id="mobile-menu"
             class="hidden md:hidden bg-[#007C92] text-white flex flex-col space-y-2 mt-2 p-4 rounded-lg">
             <a href="#" class="hover:text-gray-200 transition">Home</a>
@@ -106,6 +121,11 @@
             document.getElementById("mobile-menu").classList.toggle("hidden");
         });
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    @stack('scripts')
+
 </body>
 
 </html>
